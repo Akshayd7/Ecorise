@@ -124,16 +124,16 @@ table.qeq{width:100%;border-collapse:collapse;}
   <div class="card">
     <div class="fg">
       <label>System Size *</label>
-      <input type="text" id="sSize" list="sSizeOptions" value="" placeholder="Select or type your own value" oninput="toggleOS();syncInverterCapacity()"><datalist id="sSizeOptions"><option value="1 kWp / 2 Panel"></option><option value="2 kWp / 4 Panel"></option><option value="3 kWp / 5 Panel"></option><option value="3 kWp / 6 Panel"></option><option value="4 kWp / 7 Panel"></option><option value="4 kWp / 8 Panel"></option><option value="5 kWp / 8 Panel"></option><option value="5 kWp / 9 Panel"></option><option value="5 kWp / 10 Panel"></option><option value="6 kWp / 11 Panel"></option><option value="6 kWp / 12 Panel"></option><option value="7 kWp / 13 Panel"></option><option value="7 kWp / 14 Panel"></option><option value="8 kWp / 15 Panel"></option><option value="9 kWp / 16 Panel"></option><option value="10 kWp / 18 Panel"></option><option value="11 kWp / 20 Panel"></option><option value="12 kWp / 22 Panel"></option><option value="13 kWp / 24 Panel"></option><option value="14 kWp / 25 Panel"></option><option value="15 kWp / 27 Panel"></option><option value="16 kWp / 29 Panel"></option><option value="17 kWp / 30 Panel"></option><option value="18 kWp / 32 Panel"></option><option value="19 kWp / 34 Panel"></option><option value="20 kWp / 36 Panel"></option><option value="Others"></option></datalist>
+      <select id="sSize" onchange="toggleCustom('sSize');syncInverterCapacity()"><option value="">-- Select --</option><option>1 kWp / 2 Panel</option><option>2 kWp / 4 Panel</option><option>3 kWp / 5 Panel</option><option>3 kWp / 6 Panel</option><option>4 kWp / 7 Panel</option><option>4 kWp / 8 Panel</option><option>5 kWp / 8 Panel</option><option>5 kWp / 9 Panel</option><option>5 kWp / 10 Panel</option><option>6 kWp / 11 Panel</option><option>6 kWp / 12 Panel</option><option>7 kWp / 13 Panel</option><option>7 kWp / 14 Panel</option><option>8 kWp / 15 Panel</option><option>9 kWp / 16 Panel</option><option>10 kWp / 18 Panel</option><option>11 kWp / 20 Panel</option><option>12 kWp / 22 Panel</option><option>13 kWp / 24 Panel</option><option>14 kWp / 25 Panel</option><option>15 kWp / 27 Panel</option><option>16 kWp / 29 Panel</option><option>17 kWp / 30 Panel</option><option>18 kWp / 32 Panel</option><option>19 kWp / 34 Panel</option><option>20 kWp / 36 Panel</option><option value="Others">Custom - type your own</option></select>
     </div>
     <div class="fg hidden" id="oSizeBox"><label>Custom Size</label><input type="text" id="oSize" oninput="syncInverterCapacity()" placeholder="e.g. 22 kWp / 40 Panel"></div>
     <div class="fg">
       <label>Solar Panel Type *</label>
-      <input type="text" id="sPanel" list="sPanelOptions" value="" placeholder="Select or type your own value"><datalist id="sPanelOptions"><option value="Adani ELAN SHINE TOPCon AB-G12R-132-605 - 605 Wp"></option><option value="Adani ELAN SHINE TOPCon AB-G12R-132-610 - 610 Wp"></option><option value="Adani ELAN SHINE TOPCon AB-G12R-132-615 - 615 Wp"></option><option value="Adani ELAN SHINE TOPCon AB-G12R-132-620 - 620 Wp"></option><option value="Adani ELAN SHINE TOPCon AB-G12R-132-625 - 625 Wp"></option><option value="Adani ELAN SHINE TOPCon AB-G12R-132-630 - 630 Wp"></option><option value="Adani ELAN SHINE TOPCon AB-G12R-132-635 - 635 Wp"></option><option value="Adani ELAN SHINE TOPCon AB-G12R-132-640 - 640 Wp"></option><option value="Waaree ELITE TOPCon BiN-08-565 - 565 Wp"></option><option value="Waaree ELITE TOPCon BiN-08-570 - 570 Wp"></option><option value="Waaree ELITE TOPCon BiN-08-575 - 575 Wp"></option><option value="Waaree ELITE TOPCon BiN-08-580 - 580 Wp"></option><option value="Waaree ELITE TOPCon BiN-08-585 - 585 Wp"></option><option value="Waaree ELITE TOPCon BiN-08-590 - 590 Wp"></option><option value="Waaree ELITE TOPCon BiN-08-595 - 595 Wp"></option><option value="Waaree ELITE TOPCon BiN-08-600 - 600 Wp"></option><option value="Waaree ELITE R TOPCon BiN-21-600 - 600 Wp"></option><option value="Waaree ELITE R TOPCon BiN-21-605 - 605 Wp"></option><option value="Waaree ELITE R TOPCon BiN-21-610 - 610 Wp"></option><option value="Waaree ELITE R TOPCon BiN-21-615 - 615 Wp"></option><option value="Waaree ELITE R TOPCon BiN-21-620 - 620 Wp"></option><option value="Waaree ELITE R TOPCon BiN-21-625 - 625 Wp"></option><option value="Waaree ELITE R TOPCon BiN-21-630 - 630 Wp"></option><option value="Waaree ELITE R TOPCon BiN-21-635 - 635 Wp"></option><option value="Premier Energies TOPCon PE-560THGB144 - 560 Wp"></option><option value="Premier Energies TOPCon PE-565THGB144 - 565 Wp"></option><option value="Premier Energies TOPCon PE-570THGB144 - 570 Wp"></option><option value="Premier Energies TOPCon PE-575THGB144 - 575 Wp"></option><option value="Premier Energies TOPCon PE-580THGB144 - 580 Wp"></option><option value="Premier Energies TOPCon PE-585THGB144 - 585 Wp"></option><option value="Premier Energies TOPCon PE-590THGB144 - 590 Wp"></option></datalist><small>Suggestions from manufacturer datasheets. You can type any model. Confirm actual batch and availability with your supplier.</small><label>Panel compliance (your selection)</label><select id="panelCompliance"><option value="">Not specified</option><option>DCR</option><option>NDCR</option></select><small>DCR / NDCR is your declaration for the supplied batch, not a certification by this tool.</small>
+      <select id="sPanel" onchange="toggleOP()"><option value="">-- Select panel --</option><optgroup label="Adani"><option>Adani ELAN SHINE TOPCon AB-G12R-132-605 - 605 Wp</option><option>Adani ELAN SHINE TOPCon AB-G12R-132-610 - 610 Wp</option><option>Adani ELAN SHINE TOPCon AB-G12R-132-615 - 615 Wp</option><option>Adani ELAN SHINE TOPCon AB-G12R-132-620 - 620 Wp</option><option>Adani ELAN SHINE TOPCon AB-G12R-132-625 - 625 Wp</option><option>Adani ELAN SHINE TOPCon AB-G12R-132-630 - 630 Wp</option><option>Adani ELAN SHINE TOPCon AB-G12R-132-635 - 635 Wp</option><option>Adani ELAN SHINE TOPCon AB-G12R-132-640 - 640 Wp</option></optgroup><optgroup label="Waaree"><option>Waaree ELITE TOPCon BiN-08-565 - 565 Wp</option><option>Waaree ELITE TOPCon BiN-08-570 - 570 Wp</option><option>Waaree ELITE TOPCon BiN-08-575 - 575 Wp</option><option>Waaree ELITE TOPCon BiN-08-580 - 580 Wp</option><option>Waaree ELITE TOPCon BiN-08-585 - 585 Wp</option><option>Waaree ELITE TOPCon BiN-08-590 - 590 Wp</option><option>Waaree ELITE TOPCon BiN-08-595 - 595 Wp</option><option>Waaree ELITE TOPCon BiN-08-600 - 600 Wp</option><option>Waaree ELITE R TOPCon BiN-21-600 - 600 Wp</option><option>Waaree ELITE R TOPCon BiN-21-605 - 605 Wp</option><option>Waaree ELITE R TOPCon BiN-21-610 - 610 Wp</option><option>Waaree ELITE R TOPCon BiN-21-615 - 615 Wp</option><option>Waaree ELITE R TOPCon BiN-21-620 - 620 Wp</option><option>Waaree ELITE R TOPCon BiN-21-625 - 625 Wp</option><option>Waaree ELITE R TOPCon BiN-21-630 - 630 Wp</option><option>Waaree ELITE R TOPCon BiN-21-635 - 635 Wp</option></optgroup><optgroup label="Premier Energies"><option>Premier Energies TOPCon PE-560THGB144 - 560 Wp</option><option>Premier Energies TOPCon PE-565THGB144 - 565 Wp</option><option>Premier Energies TOPCon PE-570THGB144 - 570 Wp</option><option>Premier Energies TOPCon PE-575THGB144 - 575 Wp</option><option>Premier Energies TOPCon PE-580THGB144 - 580 Wp</option><option>Premier Energies TOPCon PE-585THGB144 - 585 Wp</option><option>Premier Energies TOPCon PE-590THGB144 - 590 Wp</option></optgroup><option value="Others">Custom - type your own</option></select><div class="fg hidden" id="oPanelBox"><label>Custom Panel</label><input type="text" id="oPanel" placeholder="Type model and wattage"></div><label>Panel compliance (your selection)</label><select id="panelCompliance"><option value="">Not specified</option><option>DCR</option><option>NDCR</option></select>
     </div>
     <div class="fg">
       <label>Inverter *</label><label style="font-weight:normal"><input type="checkbox" id="autoInv" checked onchange="syncInverterCapacity()" style="width:auto"> Match inverter kW to system kWp (uncheck to enter a custom capacity)</label>
-      <input type="text" id="sInv" list="sInvOptions" value="" placeholder="Select or type your own value" oninput="toggleOI()"><datalist id="sInvOptions"><option value="Polycab 1kW"></option><option value="Polycab 2kW"></option><option value="Polycab 3kW"></option><option value="Polycab 4kW"></option><option value="Polycab 5kW"></option><option value="Polycab 6kW"></option><option value="Polycab 7kW"></option><option value="Polycab 8kW"></option><option value="Polycab 9kW"></option><option value="Polycab 10kW"></option><option value="Polycab 11kW"></option><option value="Polycab 12kW"></option><option value="Polycab 13kW"></option><option value="Polycab 14kW"></option><option value="Polycab 15kW"></option><option value="Polycab 16kW"></option><option value="Polycab 17kW"></option><option value="Polycab 18kW"></option><option value="Polycab 19kW"></option><option value="Polycab 20kW"></option></datalist>
+      <select id="sInv" onchange="toggleOI()"><option value="">-- Select inverter --</option><option>Polycab 1kW</option><option>Polycab 2kW</option><option>Polycab 3kW</option><option>Polycab 4kW</option><option>Polycab 5kW</option><option>Polycab 6kW</option><option>Polycab 7kW</option><option>Polycab 8kW</option><option>Polycab 9kW</option><option>Polycab 10kW</option><option>Polycab 11kW</option><option>Polycab 12kW</option><option>Polycab 13kW</option><option>Polycab 14kW</option><option>Polycab 15kW</option><option>Polycab 16kW</option><option>Polycab 17kW</option><option>Polycab 18kW</option><option>Polycab 19kW</option><option>Polycab 20kW</option><option value="Others">Custom - type your own</option></select>
     </div>
     <div class="fg hidden" id="oInvBox"><label>Custom Inverter</label><input type="text" id="oInv" placeholder="e.g. Fronius 10kW"></div>
   </div>
@@ -142,19 +142,19 @@ table.qeq{width:100%;border-collapse:collapse;}
   <div class="card">
     <div class="fg">
       <label>Battery</label>
-      <input type="text" id="sBatt" list="sBattOptions" value="Not Included" placeholder="Select or type your own value"><datalist id="sBattOptions"><option value="Not Included"></option><option value="2 Nos - UTL/Luminous/Exide/Eqv."></option><option value="4 Nos - UTL/Luminous/Exide/Eqv."></option><option value="6 Nos - UTL/Luminous/Exide/Eqv."></option><option value="As per load demand"></option></datalist>
+      <select id="sBatt" onchange="toggleCustom('sBatt');"><option value="">-- Select --</option><option selected>Not Included</option><option>2 Nos - UTL/Luminous/Exide/Eqv.</option><option>4 Nos - UTL/Luminous/Exide/Eqv.</option><option>6 Nos - UTL/Luminous/Exide/Eqv.</option><option>As per load demand</option><option value="Others">Custom - type your own</option></select><div class="fg hidden" id="sBattCustomBox"><label>Custom - type your own</label><input id="sBattCustom" type="text"></div>
     </div>
     <div class="fg">
       <label>Structure Type *</label>
-      <input type="text" id="sStruct" list="sStructOptions" value="" placeholder="Select or type your own value"><datalist id="sStructOptions"><option value="HDGI Structure (8/6ft)"></option><option value="HDGI Structure (10/8ft)"></option><option value="Mono Rail Structure (Tin Shed)"></option><option value="GI Structure (Tin Shed)"></option><option value="GI Structure"></option><option value="Others / Customized"></option></datalist>
+      <select id="sStruct" onchange="toggleCustom('sStruct');"><option value="">-- Select --</option><option>HDGI Structure (8/6ft)</option><option>HDGI Structure (10/8ft)</option><option>Mono Rail Structure (Tin Shed)</option><option>GI Structure (Tin Shed)</option><option>GI Structure</option><option>Others / Customized</option><option value="Others">Custom - type your own</option></select><div class="fg hidden" id="sStructCustomBox"><label>Custom - type your own</label><input id="sStructCustom" type="text"></div>
     </div>
     <div class="fg">
       <label>Plant Type</label>
-      <input type="text" id="sPlant" list="sPlantOptions" value="RCC Roof" placeholder="Select or type your own value"><datalist id="sPlantOptions"><option value="RCC Roof"></option><option value="Ground Mount"></option><option value="Metal Sheet / Tin Shed"></option></datalist>
+      <select id="sPlant" onchange="toggleCustom('sPlant');"><option value="">-- Select --</option><option selected>RCC Roof</option><option>Ground Mount</option><option>Metal Sheet / Tin Shed</option><option value="Others">Custom - type your own</option></select><div class="fg hidden" id="sPlantCustomBox"><label>Custom - type your own</label><input id="sPlantCustom" type="text"></div>
     </div>
     <div class="fg">
       <label>Performance Service</label>
-      <input type="text" id="sPerf" list="sPerfOptions" value="5 Years Sales Service Included" placeholder="Select or type your own value"><datalist id="sPerfOptions"><option value="5 Years Sales Service Included"></option><option value="1 Year Sales Service Included"></option></datalist>
+      <select id="sPerf" onchange="toggleCustom('sPerf');"><option value="">-- Select --</option><option selected>5 Years Sales Service Included</option><option>1 Year Sales Service Included</option><option value="Others">Custom - type your own</option></select><div class="fg hidden" id="sPerfCustomBox"><label>Custom - type your own</label><input id="sPerfCustom" type="text"></div>
     </div>
     <div class="fg"><label>Total System Price (GST Included) *</label><input type="number" id="sPrice" placeholder="e.g. 205000" oninput="calcP()"></div>
     <div class="fg"><label>Govt. Subsidy</label><input type="number" id="sSub" placeholder="e.g. 78000" oninput="calcP()"></div>
@@ -272,6 +272,9 @@ table.qeq{width:100%;border-collapse:collapse;}
 <script>
 document.getElementById('qDate').valueAsDate=new Date();
 function toggleOS(){document.getElementById('oSizeBox').className=document.getElementById('sSize').value==='Others'?'fg':'fg hidden';}
+function toggleCustom(id){document.getElementById(id==='sSize'?'oSizeBox':id+'CustomBox').className=document.getElementById(id).value==='Others'?'fg':'fg hidden';}
+function chosen(id){var v=document.getElementById(id).value;return v==='Others'?document.getElementById(id+'Custom').value.trim():v;}
+function toggleOP(){document.getElementById('oPanelBox').className=document.getElementById('sPanel').value==='Others'?'fg':'fg hidden';}
 function toggleOI(){document.getElementById('oInvBox').className=document.getElementById('sInv').value==='Others'?'fg':'fg hidden';}
 function syncInverterCapacity(){
   if(!document.getElementById('autoInv').checked)return;
@@ -281,8 +284,9 @@ function syncInverterCapacity(){
   var field=document.getElementById('sInv');
   // Custom inverter text is always an explicit override.
   if(!match||field.value==='Others')return;
-  if(!field.value){field.value='Polycab '+match[1]+'kW';return;}
-  field.value=field.value.replace(/[0-9]+(?:\.[0-9]+)?\s*kW\b/i,match[1]+'kW');
+  var capacity=Number(match[1]);
+  if(Number.isInteger(capacity)&&capacity>=1&&capacity<=20){field.value='Polycab '+capacity+'kW';toggleOI();}
+  else {field.value='Others';document.getElementById('oInv').value='Polycab '+match[1]+'kW';toggleOI();}
 }
 function fmt(n){return 'Rs.'+Number(n).toLocaleString('en-IN');}
 function calcP(){
@@ -309,10 +313,11 @@ function gen(){
   var city=document.getElementById('cCity').value.trim();
   var sv=document.getElementById('sSize').value;
   var panel=document.getElementById('sPanel').value;
+  if(panel==='Others')panel=document.getElementById('oPanel').value.trim();
   var compliance=document.getElementById('panelCompliance').value;
   if(compliance)panel+=' ('+compliance+')';
   var iv=document.getElementById('sInv').value;
-  var str=document.getElementById('sStruct').value;
+  var str=chosen('sStruct');
   var tot=parseFloat(document.getElementById('sPrice').value)||0;
   var con=document.getElementById('conName').value.trim();
   if(!name){alert('Client naam likhein!');return;}
@@ -329,9 +334,9 @@ function gen(){
   var email=document.getElementById('cEmail').value;
   var rd=document.getElementById('qDate').value;
   var dt=rd?new Date(rd+'T00:00:00').toLocaleDateString('en-IN',{day:'2-digit',month:'2-digit',year:'numeric'}):new Date().toLocaleDateString('en-IN');
-  var plant=document.getElementById('sPlant').value;
-  var batt=document.getElementById('sBatt').value;
-  var perf=document.getElementById('sPerf').value;
+  var plant=chosen('sPlant');
+  var batt=chosen('sBatt');
+  var perf=chosen('sPerf');
   var sub=parseFloat(document.getElementById('sSub').value)||0;
   var rem=document.getElementById('sRem').value.trim();
   var ref=getRef();
