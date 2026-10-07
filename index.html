@@ -309,6 +309,8 @@ function gen(){
   var city=document.getElementById('cCity').value.trim();
   var sv=document.getElementById('sSize').value;
   var panel=document.getElementById('sPanel').value;
+  var compliance=document.getElementById('panelCompliance').value;
+  if(compliance)panel+=' ('+compliance+')';
   var iv=document.getElementById('sInv').value;
   var str=document.getElementById('sStruct').value;
   var tot=parseFloat(document.getElementById('sPrice').value)||0;
@@ -361,7 +363,7 @@ function gen(){
   var eq=[['Solar PV Module',panel,((size.match(/([0-9]+)\s*Panel/i)||[])[1]||'As per system')],['On-Grid Inverter',inv,'01 No.']];
   if(batt!=='Not Included')eq.push(['Battery',batt,'As listed']);
   eq=eq.concat([['ACDB Box','Polycab/Havells - As per system','01 No.'],['DCDB Box','Polycab/Havells - As per system','01 No.'],['AC Wire','Polycab/RR/APAR - 4 sq. mm.','As required'],['DC Wire','Polycab/RR/APAR - 4 sq. mm.','As required'],['Lightning Arrestor','Copper coated','01 No.'],['Earthing Rods','Copper coated','03 Nos.'],['Generation Meter','Genus','01 No.'],['Mounting Structure',str,'01 Set'],['Concrete Foundation','PCC/RCC','As required']]);
-  document.getElementById('qEqT').textContent='Equipment Details ('+esc(size)+')';
+  document.getElementById('qEqT').textContent='Equipment Details ('+size+')';
   document.getElementById('qEqBody').innerHTML=eq.map(function(r,i){return '<tr><td>'+(i+1)+'</td><td>'+r[0]+'</td><td>'+esc(r[1])+'</td><td>'+r[2]+'</td></tr>';}).join('');
   document.getElementById('qWords').innerHTML='<b>Amount in Words:</b> Rupees '+words(tot)+' Only (Including GST)';
   var rows='<tr><td>Supply, Installation &amp; Commissioning of On-Grid Solar Rooftop System ('+esc(size)+', '+esc(plant)+') - Including GST</td><td style="text-align:right">'+fmt(tot)+'</td></tr>';
