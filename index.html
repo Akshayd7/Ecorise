@@ -124,68 +124,16 @@ table.qeq{width:100%;border-collapse:collapse;}
   <div class="card">
     <div class="fg">
       <label>System Size *</label>
-      <select id="sSize" onchange="toggleOS()">
-        <option value="">-- Select karo --</option>
-        <option>1 kWp / 2 Panel</option><option>2 kWp / 4 Panel</option>
-        <option>3 kWp / 5 Panel</option><option>3 kWp / 6 Panel</option>
-        <option>4 kWp / 7 Panel</option><option>4 kWp / 8 Panel</option>
-        <option>5 kWp / 8 Panel</option><option>5 kWp / 9 Panel</option>
-        <option>5 kWp / 10 Panel</option><option>6 kWp / 11 Panel</option>
-        <option>6 kWp / 12 Panel</option><option>7 kWp / 13 Panel</option>
-        <option>7 kWp / 14 Panel</option><option>8 kWp / 15 Panel</option>
-        <option>9 kWp / 16 Panel</option><option>10 kWp / 18 Panel</option>
-        <option>11 kWp / 20 Panel</option><option>12 kWp / 22 Panel</option>
-        <option>13 kWp / 24 Panel</option><option>14 kWp / 25 Panel</option>
-        <option>15 kWp / 27 Panel</option><option>16 kWp / 29 Panel</option>
-        <option>17 kWp / 30 Panel</option><option>18 kWp / 32 Panel</option>
-        <option>19 kWp / 34 Panel</option><option>20 kWp / 36 Panel</option>
-        <option value="Others">Others / As per demand</option>
-      </select>
+      <input type="text" id="sSize" list="sSizeOptions" value="" placeholder="Select or type your own value" oninput="toggleOS();syncInverterCapacity()"><datalist id="sSizeOptions"><option value="1 kWp / 2 Panel"></option><option value="2 kWp / 4 Panel"></option><option value="3 kWp / 5 Panel"></option><option value="3 kWp / 6 Panel"></option><option value="4 kWp / 7 Panel"></option><option value="4 kWp / 8 Panel"></option><option value="5 kWp / 8 Panel"></option><option value="5 kWp / 9 Panel"></option><option value="5 kWp / 10 Panel"></option><option value="6 kWp / 11 Panel"></option><option value="6 kWp / 12 Panel"></option><option value="7 kWp / 13 Panel"></option><option value="7 kWp / 14 Panel"></option><option value="8 kWp / 15 Panel"></option><option value="9 kWp / 16 Panel"></option><option value="10 kWp / 18 Panel"></option><option value="11 kWp / 20 Panel"></option><option value="12 kWp / 22 Panel"></option><option value="13 kWp / 24 Panel"></option><option value="14 kWp / 25 Panel"></option><option value="15 kWp / 27 Panel"></option><option value="16 kWp / 29 Panel"></option><option value="17 kWp / 30 Panel"></option><option value="18 kWp / 32 Panel"></option><option value="19 kWp / 34 Panel"></option><option value="20 kWp / 36 Panel"></option><option value="Others"></option></datalist>
     </div>
-    <div class="fg hidden" id="oSizeBox"><label>Custom Size</label><input type="text" id="oSize" placeholder="e.g. 22 kWp / 40 Panel"></div>
+    <div class="fg hidden" id="oSizeBox"><label>Custom Size</label><input type="text" id="oSize" oninput="syncInverterCapacity()" placeholder="e.g. 22 kWp / 40 Panel"></div>
     <div class="fg">
       <label>Solar Panel Type *</label>
-      <select id="sPanel">
-        <option value="">-- Select karo --</option>
-        <option>Adani Topcon Above 565WP</option>
-        <option>Adani Bifacial 540wp-550wp (DCR)</option>
-        <option>Adani Bifacial 540wp-550wp (NDCR)</option>
-        <option>Adani Topcon Bifacial 610wp-620wp DCR</option>
-        <option>Adani Topcon Bifacial 610wp-620wp NDCR</option>
-        <option>Oswal Bifacial 540wp-550wp (DCR)</option>
-        <option>Oswal Bifacial 540wp-550wp (NDCR)</option>
-        <option>Premier Energies Bifacial 540wp (DCR)</option>
-        <option>Premier Energies Bifacial 540wp (NDCR)</option>
-        <option>Navitas Bifacial 540wp (NDCR)</option>
-        <option>Waaree Bifacial 540wp-550wp (DCR)</option>
-        <option>Waaree Bifacial 540wp-550wp (NDCR)</option>
-        <option>Waaree Topcon 610wp-620wp (DCR)</option>
-        <option>Waaree Topcon 610wp-620wp (NDCR)</option>
-        <option>Other Make</option>
-      </select>
+      <input type="text" id="sPanel" list="sPanelOptions" value="" placeholder="Select or type your own value"><datalist id="sPanelOptions"><option value="Adani Topcon Above 565WP"></option><option value="Adani Bifacial 540wp-550wp (DCR)"></option><option value="Adani Bifacial 540wp-550wp (NDCR)"></option><option value="Adani Topcon Bifacial 610wp-620wp DCR"></option><option value="Adani Topcon Bifacial 610wp-620wp NDCR"></option><option value="Oswal Bifacial 540wp-550wp (DCR)"></option><option value="Oswal Bifacial 540wp-550wp (NDCR)"></option><option value="Premier Energies Bifacial 540wp (DCR)"></option><option value="Premier Energies Bifacial 540wp (NDCR)"></option><option value="Navitas Bifacial 540wp (NDCR)"></option><option value="Waaree Bifacial 540wp-550wp (DCR)"></option><option value="Waaree Bifacial 540wp-550wp (NDCR)"></option><option value="Waaree Topcon 610wp-620wp (DCR)"></option><option value="Waaree Topcon 610wp-620wp (NDCR)"></option><option value="Other Make"></option></datalist>
     </div>
     <div class="fg">
-      <label>Inverter *</label>
-      <select id="sInv" onchange="toggleOI()">
-        <option value="">-- Select karo --</option>
-        <option>Sungrow Ongrid-1kW (Single Phase)</option>
-        <option>Sungrow Ongrid-2kW (Single Phase)</option>
-        <option>Sungrow Ongrid-3kW (Single Phase)</option>
-        <option>Sungrow Ongrid-5kW (Single Phase)</option>
-        <option>Sungrow Ongrid-5kW (Three Phase)</option>
-        <option>Sungrow Ongrid-10kW (Three Phase)</option>
-        <option>Sungrow Ongrid-15kW (Three Phase)</option>
-        <option>Sungrow Ongrid-20kW (Three Phase)</option>
-        <option>Havells 3kW</option><option>Havells 5kW</option>
-        <option>Invergy 3kW</option><option>Invergy 5kW</option>
-        <option>UTL/Luminous 3kW</option><option>UTL/Luminous 5kW</option>
-        <option>Growatt 3kW (Single Phase)</option><option>Growatt 5kW (Single Phase)</option>
-        <option>Waaree 3kW (Single Phase)</option><option>Waaree 5kW (Single Phase)</option>
-        <option>Waaree 10kW (Three Phase)</option>
-        <option>Polycab 3kW (Single Phase)</option><option>Polycab 5kW (Single Phase)</option>
-        <option>Polycab 10kW (Three Phase)</option>
-        <option value="Others">Others</option>
-      </select>
+      <label>Inverter *</label><label style="font-weight:normal"><input type="checkbox" id="autoInv" checked onchange="syncInverterCapacity()" style="width:auto"> Match inverter kW to system kWp (uncheck to enter a custom capacity)</label>
+      <input type="text" id="sInv" list="sInvOptions" value="" placeholder="Select or type your own value" oninput="toggleOI();syncInverterCapacity()"><datalist id="sInvOptions"><option value="Sungrow Ongrid-1kW (Single Phase)"></option><option value="Sungrow Ongrid-2kW (Single Phase)"></option><option value="Sungrow Ongrid-3kW (Single Phase)"></option><option value="Sungrow Ongrid-5kW (Single Phase)"></option><option value="Sungrow Ongrid-5kW (Three Phase)"></option><option value="Sungrow Ongrid-10kW (Three Phase)"></option><option value="Sungrow Ongrid-15kW (Three Phase)"></option><option value="Sungrow Ongrid-20kW (Three Phase)"></option><option value="Havells 3kW"></option><option value="Havells 5kW"></option><option value="Invergy 3kW"></option><option value="Invergy 5kW"></option><option value="UTL/Luminous 3kW"></option><option value="UTL/Luminous 5kW"></option><option value="Growatt 3kW (Single Phase)"></option><option value="Growatt 5kW (Single Phase)"></option><option value="Waaree 3kW (Single Phase)"></option><option value="Waaree 5kW (Single Phase)"></option><option value="Waaree 10kW (Three Phase)"></option><option value="Polycab 3kW (Single Phase)"></option><option value="Polycab 5kW (Single Phase)"></option><option value="Polycab 10kW (Three Phase)"></option><option value="Others"></option></datalist>
     </div>
     <div class="fg hidden" id="oInvBox"><label>Custom Inverter</label><input type="text" id="oInv" placeholder="e.g. Fronius 10kW"></div>
   </div>
@@ -194,33 +142,19 @@ table.qeq{width:100%;border-collapse:collapse;}
   <div class="card">
     <div class="fg">
       <label>Battery</label>
-      <select id="sBatt">
-        <option>Not Included</option>
-        <option>2 Nos - UTL/Luminous/Exide/Eqv.</option>
-        <option>4 Nos - UTL/Luminous/Exide/Eqv.</option>
-        <option>6 Nos - UTL/Luminous/Exide/Eqv.</option>
-        <option>As per load demand</option>
-      </select>
+      <input type="text" id="sBatt" list="sBattOptions" value="Not Included" placeholder="Select or type your own value"><datalist id="sBattOptions"><option value="Not Included"></option><option value="2 Nos - UTL/Luminous/Exide/Eqv."></option><option value="4 Nos - UTL/Luminous/Exide/Eqv."></option><option value="6 Nos - UTL/Luminous/Exide/Eqv."></option><option value="As per load demand"></option></datalist>
     </div>
     <div class="fg">
       <label>Structure Type *</label>
-      <select id="sStruct">
-        <option value="">-- Select karo --</option>
-        <option>HDGI Structure (8/6ft)</option>
-        <option>HDGI Structure (10/8ft)</option>
-        <option>Mono Rail Structure (Tin Shed)</option>
-        <option>GI Structure (Tin Shed)</option>
-        <option>GI Structure</option>
-        <option>Others / Customized</option>
-      </select>
+      <input type="text" id="sStruct" list="sStructOptions" value="" placeholder="Select or type your own value"><datalist id="sStructOptions"><option value="HDGI Structure (8/6ft)"></option><option value="HDGI Structure (10/8ft)"></option><option value="Mono Rail Structure (Tin Shed)"></option><option value="GI Structure (Tin Shed)"></option><option value="GI Structure"></option><option value="Others / Customized"></option></datalist>
     </div>
     <div class="fg">
       <label>Plant Type</label>
-      <select id="sPlant"><option>RCC Roof</option><option>Ground Mount</option><option>Metal Sheet / Tin Shed</option></select>
+      <input type="text" id="sPlant" list="sPlantOptions" value="RCC Roof" placeholder="Select or type your own value"><datalist id="sPlantOptions"><option value="RCC Roof"></option><option value="Ground Mount"></option><option value="Metal Sheet / Tin Shed"></option></datalist>
     </div>
     <div class="fg">
       <label>Performance Service</label>
-      <select id="sPerf"><option>5 Years Sales Service Included</option><option>1 Year Sales Service Included</option></select>
+      <input type="text" id="sPerf" list="sPerfOptions" value="5 Years Sales Service Included" placeholder="Select or type your own value"><datalist id="sPerfOptions"><option value="5 Years Sales Service Included"></option><option value="1 Year Sales Service Included"></option></datalist>
     </div>
     <div class="fg"><label>Total System Price (GST Included) *</label><input type="number" id="sPrice" placeholder="e.g. 205000" oninput="calcP()"></div>
     <div class="fg"><label>Govt. Subsidy</label><input type="number" id="sSub" placeholder="e.g. 78000" oninput="calcP()"></div>
@@ -339,6 +273,16 @@ table.qeq{width:100%;border-collapse:collapse;}
 document.getElementById('qDate').valueAsDate=new Date();
 function toggleOS(){document.getElementById('oSizeBox').className=document.getElementById('sSize').value==='Others'?'fg':'fg hidden';}
 function toggleOI(){document.getElementById('oInvBox').className=document.getElementById('sInv').value==='Others'?'fg':'fg hidden';}
+function syncInverterCapacity(){
+  if(!document.getElementById('autoInv').checked)return;
+  var size=document.getElementById('sSize').value;
+  if(size==='Others')size=document.getElementById('oSize').value;
+  var match=size.match(/([0-9]+(?:\.[0-9]+)?)\s*kWp?/i);
+  var field=document.getElementById('sInv');
+  // Custom inverter text is always an explicit override.
+  if(!match||!field.value||field.value==='Others')return;
+  field.value=field.value.replace(/[0-9]+(?:\.[0-9]+)?\s*kW\b/i,match[1]+'kW');
+}
 function fmt(n){return 'Rs.'+Number(n).toLocaleString('en-IN');}
 function calcP(){
   var t=parseFloat(document.getElementById('sPrice').value)||0;
@@ -397,29 +341,29 @@ function gen(){
   document.getElementById('qDate2').textContent=dt;
   document.title=name+' - Solar Quotation - EcoRise';
   var fa=[addr,city,state].filter(Boolean).join(', ');
-  var cl='<div class="qci"><span class="qcil">Client Name</span><span class="qciv">'+name+'</span></div>';
-  cl+='<div class="qci"><span class="qcil">Address</span><span class="qciv">'+fa+'</span></div>';
-  if(mob)cl+='<div class="qci"><span class="qcil">Mobile</span><span class="qciv">'+mob+'</span></div>';
-  if(email)cl+='<div class="qci"><span class="qcil">Email</span><span class="qciv">'+email+'</span></div>';
+  var cl='<div class="qci"><span class="qcil">Client Name</span><span class="qciv">'+esc(name)+'</span></div>';
+  cl+='<div class="qci"><span class="qcil">Address</span><span class="qciv">'+esc(fa)+'</span></div>';
+  if(mob)cl+='<div class="qci"><span class="qcil">Mobile</span><span class="qciv">'+esc(mob)+'</span></div>';
+  if(email)cl+='<div class="qci"><span class="qcil">Email</span><span class="qciv">'+esc(email)+'</span></div>';
   document.getElementById('qClient').innerHTML=cl;
   var sp='';
-  sp+='<div class="qspec"><div class="qsico">&#9889;</div><div><span class="qsl">System Size</span><span class="qsv">'+size+'</span></div></div>';
-  sp+='<div class="qspec"><div class="qsico">&#9728;</div><div><span class="qsl">Solar Panels</span><span class="qsv">'+panel+'</span></div></div>';
-  sp+='<div class="qspec"><div class="qsico">&#128268;</div><div><span class="qsl">Inverter</span><span class="qsv">'+inv+'</span></div></div>';
-  sp+='<div class="qspec"><div class="qsico">&#128267;</div><div><span class="qsl">Battery</span><span class="qsv">'+batt+'</span></div></div>';
-  sp+='<div class="qspec"><div class="qsico">&#127959;</div><div><span class="qsl">Structure</span><span class="qsv">'+str+'</span></div></div>';
-  sp+='<div class="qspec"><div class="qsico">&#127968;</div><div><span class="qsl">Plant Type</span><span class="qsv">'+plant+'</span></div></div>';
-  sp+='<div class="qspec"><div class="qsico">&#128295;</div><div><span class="qsl">Service</span><span class="qsv">'+perf+'</span></div></div>';
+  sp+='<div class="qspec"><div class="qsico">&#9889;</div><div><span class="qsl">System Size</span><span class="qsv">'+esc(size)+'</span></div></div>';
+  sp+='<div class="qspec"><div class="qsico">&#9728;</div><div><span class="qsl">Solar Panels</span><span class="qsv">'+esc(panel)+'</span></div></div>';
+  sp+='<div class="qspec"><div class="qsico">&#128268;</div><div><span class="qsl">Inverter</span><span class="qsv">'+esc(inv)+'</span></div></div>';
+  sp+='<div class="qspec"><div class="qsico">&#128267;</div><div><span class="qsl">Battery</span><span class="qsv">'+esc(batt)+'</span></div></div>';
+  sp+='<div class="qspec"><div class="qsico">&#127959;</div><div><span class="qsl">Structure</span><span class="qsv">'+esc(str)+'</span></div></div>';
+  sp+='<div class="qspec"><div class="qsico">&#127968;</div><div><span class="qsl">Plant Type</span><span class="qsv">'+esc(plant)+'</span></div></div>';
+  sp+='<div class="qspec"><div class="qsico">&#128295;</div><div><span class="qsl">Service</span><span class="qsv">'+esc(perf)+'</span></div></div>';
   sp+='<div class="qspec"><div class="qsico">&#128268;</div><div><span class="qsl">Wiring</span><span class="qsv">4 sq mm Polycab/RR/APAR</span></div></div>';
   if(sub>0)sp+='<div class="qspec"><div class="qsico">&#127963;</div><div><span class="qsl">Govt. Subsidy</span><span class="qsv" style="color:#1E9E5A">'+fmt(sub)+'</span></div></div>';
   document.getElementById('qSpecs').innerHTML=sp;
-  var eq=[['Solar PV Module',panel,'As per system'],['On-Grid Inverter',inv,'01 No.']];
+  var eq=[['Solar PV Module',panel,((size.match(/([0-9]+)\s*Panel/i)||[])[1]||'As per system')],['On-Grid Inverter',inv,'01 No.']];
   if(batt!=='Not Included')eq.push(['Battery',batt,'As listed']);
   eq=eq.concat([['ACDB Box','Polycab/Havells - As per system','01 No.'],['DCDB Box','Polycab/Havells - As per system','01 No.'],['AC Wire','Polycab/RR/APAR - 4 sq. mm.','As required'],['DC Wire','Polycab/RR/APAR - 4 sq. mm.','As required'],['Lightning Arrestor','Copper coated','01 No.'],['Earthing Rods','Copper coated','03 Nos.'],['Generation Meter','Genus','01 No.'],['Mounting Structure',str,'01 Set'],['Concrete Foundation','PCC/RCC','As required']]);
-  document.getElementById('qEqT').textContent='Equipment Details ('+size+')';
+  document.getElementById('qEqT').textContent='Equipment Details ('+esc(size)+')';
   document.getElementById('qEqBody').innerHTML=eq.map(function(r,i){return '<tr><td>'+(i+1)+'</td><td>'+r[0]+'</td><td>'+esc(r[1])+'</td><td>'+r[2]+'</td></tr>';}).join('');
   document.getElementById('qWords').innerHTML='<b>Amount in Words:</b> Rupees '+words(tot)+' Only (Including GST)';
-  var rows='<tr><td>Supply, Installation &amp; Commissioning of On-Grid Solar Rooftop System ('+esc(size)+', '+plant+') - Including GST</td><td style="text-align:right">'+fmt(tot)+'</td></tr>';
+  var rows='<tr><td>Supply, Installation &amp; Commissioning of On-Grid Solar Rooftop System ('+esc(size)+', '+esc(plant)+') - Including GST</td><td style="text-align:right">'+fmt(tot)+'</td></tr>';
   rows+='<tr class="tr"><td><b>Total</b></td><td style="text-align:right"><b>'+fmt(tot)+'</b></td></tr>';
   if(sub>0){
     rows+='<tr><td style="color:#888">Less: MNRE Government Subsidy (Residential only)</td><td style="text-align:right;color:#1E9E5A">- '+fmt(sub)+'</td></tr>';
@@ -447,4 +391,5 @@ function back(){
 </script>
 </body>
 </html>
+
 
